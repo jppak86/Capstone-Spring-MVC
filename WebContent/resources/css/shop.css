@@ -1,0 +1,29 @@
+@import url(//db.onlinewebfonts.com/c/1c52a84494455ed8eb83f9ced04de9fa?family=Spurs);
+
+@font-face {font-family: "Spurs"; src: url("//db.onlinewebfonts.com/t/1c52a84494455ed8eb83f9ced04de9fa.eot"); src: url("//db.onlinewebfonts.com/t/1c52a84494455ed8eb83f9ced04de9fa.eot?#iefix") format("embedded-opentype"), url("//db.onlinewebfonts.com/t/1c52a84494455ed8eb83f9ced04de9fa.woff2") format("woff2"), url("//db.onlinewebfonts.com/t/1c52a84494455ed8eb83f9ced04de9fa.woff") format("woff"), url("//db.onlinewebfonts.com/t/1c52a84494455ed8eb83f9ced04de9fa.ttf") format("truetype"), url("//db.onlinewebfonts.com/t/1c52a84494455ed8eb83f9ced04de9fa.svg#Spurs") format("svg"); }
+
+img{
+  width: 1.5%;
+  height: 1.5%;
+  
+
+}
+
+nav{
+  font-family: Spurs;
+}
+
+#p-header{
+  background-color: rgb(18, 18, 107);
+  color: white;
+}
+
+.cardContainer{
+  display: flex;
+  justify-content:space-around;
+  flex-wrap: wrap;
+  align-items:center;
+  row-gap: 30px;
+  
+}
+
