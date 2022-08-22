@@ -32,25 +32,11 @@ public class CartController {
 	
 	@Autowired
 	private UserService userService;
-	
-	
-	
-////	@GetMapping("/{userId}")
-//	public void itemsList(@PathVariable long userId, Model model) {
-//		List<Cart> myOrders = productService.getCartItems(userId);
-//		System.out.println("my orders :" + myOrders);
-//		model.addAttribute("order", myOrders);
-//		
-//		
-//
-//		
-//		
-//	}
+
 	
 	@GetMapping("/{userId}")
 	public String itemsList(@PathVariable long userId, Model model) {
 		List<Cart> myOrders = productService.getCartItems(userId);
-		System.out.println("my orders are :" + myOrders);
 		model.addAttribute("order", myOrders);
 
 		User theUser = userService.getUser(userId);
@@ -67,7 +53,7 @@ public class CartController {
 		model.addAttribute("order", myOrders);
 		
 		if(model.getAttribute("order") == null) {
-			System.out.println("model attribute: " + model.getAttribute("order"));
+			
 			List<Cart> newCart = new ArrayList<Cart>();
 			Cart newOrder = new Cart(productService.getTopById(productId), userService.getUser(userId), 1);
 			newCart.add(newOrder);
@@ -78,25 +64,21 @@ public class CartController {
 			List<Cart> newCart = (List<Cart>) model.getAttribute("order");
 			
 			int index = this.exists(productId, newCart);
-			System.out.println("Index is : " + index);
+			
 			if(index == -1) {
 				try {
 					Cart newOrder = new Cart(productService.getTopById(productId), userService.getUser(userId), 1);
 					newCart.add(newOrder);
 					productService.saveItem(newOrder);
 					model.addAttribute("order", newCart);
-					System.out.println("when index is -1 add new order: " + myOrders);
-//					productService.saveItem(new Cart(productService.getTopById(productId), userService.getUser(userId), 1));
-//					itemsList(userId, model);
+					
 				} catch (IOException e) {
 					// TODO Auto-generated catch block
 					e.printStackTrace();
 				}
 			}else {
 				int quantity = newCart.get(index).getQuantity() +1;
-				System.out.println("quantity is : " + quantity);
 				newCart.get(index).setQuantity(quantity);
-				System.out.println("new quantity is : " + newCart.get(index).getQuantity());
 				Cart newOrder = new Cart(newCart.get(index).getId(), productService.getTopById(productId), userService.getUser(userId), quantity);
 				newCart.add(newOrder);
 				productService.saveItem(newOrder);
@@ -113,17 +95,8 @@ public class CartController {
 		List<Cart> newCart = productService.getCartItems(userId);
 		
 		
-		System.out.println("remove List model attribute: " + model.getAttribute("order"));
-//
-//		
-		System.out.println("jayden orders : " + newCart);
 		int index = this.exists(productId, newCart);
 		int cartId = newCart.get(index).getId();
-		System.out.println("jayden cart order index : " + index);
-		System.out.println("jayden cart Id : " + cartId);
-
-
-		
 		
 		productService.itemDelete(cartId);
 //		newCart.remove(index);
