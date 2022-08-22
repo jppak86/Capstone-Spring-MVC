@@ -52,6 +52,10 @@ public class CartController {
 		List<Cart> myOrders = productService.getCartItems(userId);
 		System.out.println("my orders are :" + myOrders);
 		model.addAttribute("order", myOrders);
+
+		User theUser = userService.getUser(userId);
+		
+		model.addAttribute("theUser", theUser);
 		
 		return "cart";
 	}
@@ -63,19 +67,14 @@ public class CartController {
 		model.addAttribute("order", myOrders);
 		
 		if(model.getAttribute("order") == null) {
-			
 			System.out.println("model attribute: " + model.getAttribute("order"));
-			
 			List<Cart> newCart = new ArrayList<Cart>();
 			Cart newOrder = new Cart(productService.getTopById(productId), userService.getUser(userId), 1);
 			newCart.add(newOrder);
 			productService.saveItem(newOrder);
-
 			model.addAttribute("order", myOrders);
 			
-			
 		} else {
-			
 			List<Cart> newCart = (List<Cart>) model.getAttribute("order");
 			
 			int index = this.exists(productId, newCart);
@@ -86,7 +85,6 @@ public class CartController {
 					newCart.add(newOrder);
 					productService.saveItem(newOrder);
 					model.addAttribute("order", newCart);
-					
 					System.out.println("when index is -1 add new order: " + myOrders);
 //					productService.saveItem(new Cart(productService.getTopById(productId), userService.getUser(userId), 1));
 //					itemsList(userId, model);
@@ -95,31 +93,18 @@ public class CartController {
 					e.printStackTrace();
 				}
 			}else {
-
-				
 				int quantity = newCart.get(index).getQuantity() +1;
 				System.out.println("quantity is : " + quantity);
-				
 				newCart.get(index).setQuantity(quantity);
 				System.out.println("new quantity is : " + newCart.get(index).getQuantity());
 				Cart newOrder = new Cart(newCart.get(index).getId(), productService.getTopById(productId), userService.getUser(userId), quantity);
 				newCart.add(newOrder);
 				productService.saveItem(newOrder);
-				
 				model.addAttribute("order", newCart);
 			}
-			
-//			productService.saveItem(new Cart(productService.getTopById(productId), userService.getUser(userId), 1));
-//			itemsList(userId, model);
-			
-			
+
 		}
-//		productService.saveItem(new Cart(productService.getTopById(productId), userService.getUser(userId), 1));
-//		itemsList(userId, model);
-		
-		
-		return "redirect:/cart/{userId}"; 
-			
+		return "redirect:/cart/{userId}"; 	
 		}
 	
 	@GetMapping("/remove/{productId}/{userId}")
@@ -176,6 +161,9 @@ public class CartController {
 	public String checkOut(@PathVariable long userId, Model model)  {
 		List<Cart> carts = productService.getCartItems(userId);
 		model.addAttribute("cart", carts);
+		User theUser = userService.getUser(userId);
+		
+		model.addAttribute("theUser", theUser);
 		return "checkout";
 		
 	}

@@ -57,7 +57,7 @@
 								Account</a></li>
 						<c:if test="${theUser.id == null}">
 						<li class="nav-item"><a class="nav-link active"
-							aria-current="page" href="http://localhost:8686/login">Login as User</a></li>
+							aria-current="page" href="http://localhost:8080/Shop/login">Login as User</a></li>
 						</c:if>
 						<li class="nav-item"><a class="nav-link"
 							href="http://localhost:8080/Shop/admin">Admin</a></li>

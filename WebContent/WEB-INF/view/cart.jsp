@@ -23,10 +23,13 @@
 
 	<nav class="navbar navbar-dark bg-dark fixed-top">
 		<div class="container-fluid">
+		<c:if test="${theUser.id != null}">
 			<img
 				src="https://seeklogo.com/images/T/tottenham-hotspur-logo-867FE9A18B-seeklogo.com.png"
-				alt=""> <a class="navbar-brand"
-				href="http://localhost:8080/Shop/home2/${user.id}">Tottenham
+				alt=""> 
+				</c:if>
+				<a class="navbar-brand"
+				href="http://localhost:8080/Shop/home2/${userId}">Tottenham
 				Hotspur F.C. Shop</a>
 			<button class="navbar-toggler" type="button"
 				data-bs-toggle="offcanvas" data-bs-target="#offcanvasDarkNavbar"
@@ -38,7 +41,7 @@
 				<div class="offcanvas-header">
 					<h5 class="offcanvas-title" id="offcanvasDarkNavbarLabel">Menu</h5>
 					<h5 class="offcanvas-title" id="offcanvasDarkNavbarLabel">UserName:
-						${user.email}</h5>
+						${theUser.email}</h5>
 
 					<button type="button" class="btn-close btn-close-white"
 						data-bs-dismiss="offcanvas" aria-label="Close"></button>
@@ -47,7 +50,7 @@
 					<ul class="navbar-nav justify-content-end flex-grow-1 pe-3">
 						<li class="nav-item"><a class="nav-link active"
 							aria-current="page"
-							href="http://localhost:8080/Shop/home2/${user.id}">Home</a></li>
+							href="http://localhost:8080/Shop/home2/${userId}">Home</a></li>
 						<li class="nav-item"><a class="nav-link active"
 							aria-current="page"
 							href="http://localhost:8080/rest-api/api/customers">B2B</a></li>
@@ -57,15 +60,15 @@
 						<li class="nav-item"><a class="nav-link active"
 							aria-current="page" href="http://localhost:8080/Shop/login">Login</a></li>
 						<li class="nav-item"><a class="nav-link"
-							href="http://localhost:8080/Shop/cart/checkout/${user.id}">CHECKOUT</a></li>
+							href="http://localhost:8080/Shop/cart/checkout/${userId}">CHECKOUT</a></li>
 						<li class="nav-item"><a class="nav-link"
-							href="http://localhost:8080/Shop/cart/${user.id}">Cart</a></li>
+							href="http://localhost:8080/Shop/cart/${userId}">Cart</a></li>
 						<li class="nav-item dropdown"><a
 							class="nav-link dropdown-toggle" href="#" role="button"
 							data-bs-toggle="dropdown" aria-expanded="false"> Shop </a>
 							<ul class="dropdown-menu dropdown-menu-dark">
 								<li><a class="dropdown-item"
-									href="http://localhost:8080/Shop/product/top/${user.id}">Products</a></li>
+									href="http://localhost:8080/Shop/product/top/${userId}">Products</a></li>
 
 								<li>
 									<hr class="dropdown-divider">
@@ -74,7 +77,7 @@
 							</ul></li>
 						<li class="nav-item"><a class="nav-link active"
 							aria-current="page"
-							href="http://localhost:8080/Shop/user/contact/${user.id}">Contact</a></li>
+							href="http://localhost:8080/Shop/user/contact/${userId}">Contact</a></li>
 					</ul>
 
 				</div>
@@ -91,7 +94,7 @@
 				<h1 class="font-weight-semi-bold text-uppercase mb-3">Cart</h1>
 				<div class="d-inline-flex">
 					<p class="m-0">
-						<a href="http://localhost:8080/Shop/home2/${user.id}">Home</a>
+						<a href="http://localhost:8080/Shop/home2/${userId}">Home</a>
 					</p>
 					<p class="m-0 px-2">-</p>
 					<p class="m-0">Cart</p>
@@ -154,7 +157,7 @@
 				<h5 class="card-title">Subtotal: ${total} USD</h5>
 				<p class="card-text"></p>
 				<c:if test="${user.id != null}">
-				<a href="<c:url value="/cart/checkout/${userId}" />"
+				<a href="<c:url value="/cart/checkout/${user.id}" />"
 					class="btn btn-success"> Check Out </a>
 				</c:if>
 					

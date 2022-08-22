@@ -24,6 +24,7 @@
 <link type="text/css" rel="stylesheet"
 	href="${pageContext.request.contextPath}/resources/css/style.css" />
 
+
 </head>
 
 <body>
@@ -56,10 +57,10 @@
 							href="http://localhost:8080/rest-api/api/customers">B2B</a></li>
 						<li class="nav-item"><a class="nav-link active"
 							aria-current="page"
-							href="http://localhost:8080/Shop/user/createAccount">Create
+							href="http://localhost:8686/registration">Create
 								Account</a></li>
 						<li class="nav-item"><a class="nav-link active"
-							aria-current="page" href="http://localhost:8686/login">Login as User</a></li>
+							aria-current="page" href="http://localhost:8080/Shop/login">Login as User</a></li>
 						<li class="nav-item"><a class="nav-link"
 							href="http://localhost:8080/Shop/admin">Admin</a></li>
 						<!-- <li class="nav-item"><a class="nav-link"
@@ -98,7 +99,7 @@
 		<div id="content">
 
 			<input type="button" value="Add user"
-				onclick="window.location.href='createAccount'; return false;"
+				onclick="window.location.href='http://localhost:8686/registration'; return false;"
 				class="add-button" />
 
 

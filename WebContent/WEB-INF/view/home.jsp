@@ -34,7 +34,7 @@
     </button>
   </div>
   
-  <h2>UserName: ${theUser.email} is loggedin now</h2>
+  <%-- <h2>UserName: ${theUser.email} is loggedin now</h2> --%>
 
   <div id="tableContainer">
     <h1>Upcoming Match Scedule</h1>

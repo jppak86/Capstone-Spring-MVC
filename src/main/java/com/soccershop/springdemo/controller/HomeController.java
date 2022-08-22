@@ -30,6 +30,7 @@ public class HomeController {
 	
 	
 	
+
 	@RequestMapping("/home2/{userId}")
 	public String home(@PathVariable("userId") long theId, Model model) {
 		List<TopProduct> topProductList = productService.getTopProducts();

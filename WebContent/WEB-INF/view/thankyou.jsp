@@ -108,11 +108,11 @@
 		<div class="_body">
 			<div class="_box">
 				<h2>
-					<strong>Please check your ${theUser.email}</strong> for shipping confirmation.
+					<strong>Please check your email: ${theUser.email}</strong> for shipping confirmation.
 				</h2>
 				<p>Thanks a bunch for filling that out. It means a lot to us,
 					just like you do! We really appreciate you giving us a moment of
-					your time today. Thanks for being you.</p>
+					your time today. Thanks for shopping with us.</p>
 			</div>
 		</div>
 		<div class="_footer">

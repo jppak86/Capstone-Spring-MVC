@@ -52,7 +52,7 @@
 									class="fa fa-fw fa-eye field-icon toggle-password"></span>
 							</div>
 							<div class="form-group">
-								<input type="submit" value="Sign-in" class="btn btn-primary">
+								<input type="submit" value="Sign-in" class="btn btn-primary btn-lg">
 
 							</div>
 

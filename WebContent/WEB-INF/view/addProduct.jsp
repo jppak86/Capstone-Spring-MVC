@@ -1,7 +1,7 @@
 <%@ taglib prefix="form" uri="http://www.springframework.org/tags/form" %>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
 
-<%@include file="/WEB-INF/view/template/header.jsp"%>
+<%@include file="/WEB-INF/view/template/admin_header.jsp"%>
 
 <div class="container-fluid bg-secondary mb-5">
 	<div id="p-header"

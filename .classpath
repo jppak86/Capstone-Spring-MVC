@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <classpath>
 	<classpathentry kind="con" path="org.eclipse.jdt.launching.JRE_CONTAINER/org.eclipse.jdt.internal.debug.ui.launcher.StandardVMType/JavaSE-1.8"/>
-	<classpathentry kind="src" path="src"/>
+	<classpathentry kind="src" path="src/main/java"/>
 	<classpathentry kind="src" path="test"/>
 	<classpathentry kind="con" path="org.eclipse.jst.server.core.container/org.eclipse.jst.server.tomcat.runtimeTarget/Apache Tomcat v9.0">
 		<attributes>
@@ -113,6 +113,18 @@
 	<classpathentry kind="lib" path="/Users/jaydenpak/Downloads/jar_files (2)/spring-web-5.3.21.jar"/>
 	<classpathentry kind="lib" path="/Users/jaydenpak/Downloads/jar_files (2)/spring-beans-5.3.21.jar"/>
 	<classpathentry kind="lib" path="/Users/jaydenpak/Downloads/jar_files (2)/spring-core-5.3.21.jar"/>
+	<classpathentry kind="lib" path="/Users/jaydenpak/Downloads/jar_files (8)/jackson-annotations-2.13.3.jar"/>
+	<classpathentry kind="lib" path="/Users/jaydenpak/Downloads/jar_files (8)/jackson-databind-2.13.3.jar"/>
+	<classpathentry kind="lib" path="/Users/jaydenpak/Downloads/jar_files (8)/jackson-core-2.13.3.jar"/>
+	<classpathentry kind="lib" path="/Users/jaydenpak/Downloads/jar_files (9)/opentest4j-1.2.0.jar"/>
+	<classpathentry kind="lib" path="/Users/jaydenpak/Downloads/jar_files (9)/mockito-junit-jupiter-4.7.0.jar"/>
+	<classpathentry kind="lib" path="/Users/jaydenpak/Downloads/jar_files (9)/junit-jupiter-api-5.9.0.jar"/>
+	<classpathentry kind="lib" path="/Users/jaydenpak/Downloads/jar_files (9)/apiguardian-api-1.1.2.jar"/>
+	<classpathentry kind="lib" path="/Users/jaydenpak/Downloads/jar_files (9)/mockito-core-4.7.0.jar"/>
+	<classpathentry kind="lib" path="/Users/jaydenpak/Downloads/jar_files (9)/objenesis-3.2.jar"/>
+	<classpathentry kind="lib" path="/Users/jaydenpak/Downloads/jar_files (9)/byte-buddy-1.12.13.jar"/>
+	<classpathentry kind="lib" path="/Users/jaydenpak/Downloads/jar_files (9)/byte-buddy-agent-1.12.13.jar"/>
+	<classpathentry kind="lib" path="/Users/jaydenpak/Downloads/jar_files (9)/junit-platform-commons-1.9.0.jar"/>
 	<classpathentry kind="con" path="org.eclipse.jdt.junit.JUNIT_CONTAINER/5"/>
 	<classpathentry kind="output" path="build/classes"/>
 </classpath>
